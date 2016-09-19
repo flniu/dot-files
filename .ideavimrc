@@ -2,6 +2,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+nmap <ESC><ESC> :noh<CR>
+vmap <silent> // y/<C-R>"<CR><CR>
 
 set nrformats-=octal
 
