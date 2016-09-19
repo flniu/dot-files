@@ -1,0 +1,11 @@
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set nrformats-=octal
+
+set surround
+
+set number
+nmap <Leader>rn :set rnu!<CR>
