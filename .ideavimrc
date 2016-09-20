@@ -11,3 +11,5 @@ set surround
 
 set number
 nmap <Leader>rn :set rnu!<CR>
+
+nmap Q :q<CR>
