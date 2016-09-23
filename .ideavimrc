@@ -1,7 +1,7 @@
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase
+"set smartcase
 nmap <ESC><ESC> :noh<CR>
 vmap <silent> // y/<C-R>"<CR><CR>
 
@@ -13,3 +13,5 @@ set number
 nmap <Leader>rn :set rnu!<CR>
 
 nmap Q :q<CR>
+
+set scrolloff=5
