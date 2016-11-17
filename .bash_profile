@@ -1,6 +1,17 @@
 export EDITOR=vim
 export TMP=$HOME/.tmp
 
+if [ -f "$HOME/.envvar" ]; then
+  source $HOME/.envvar
+fi
+
+if [ -d "$HOME/.linuxbrew" ]; then
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+  export XDG_DATA_DIRS="$HOME/.linuxbrew/share:$XDG_DATA_DIRS"
+fi
+
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
