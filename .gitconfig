@@ -3,3 +3,5 @@
 	name = Feilong Niu
 [push]
 	default = simple
+[diff]
+	tool = vimdiff
