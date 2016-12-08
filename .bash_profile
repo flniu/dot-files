@@ -18,10 +18,14 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-alias so=source
 alias v=vim
 alias vd='vim -d'
 
 alias gn='git number'
 alias gna='git number add'
 alias gnv='git number -c vim'
+
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
