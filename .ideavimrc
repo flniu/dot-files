@@ -13,5 +13,12 @@ set number
 nmap <Leader>rn :set rnu!<CR>
 
 nmap Q :q<CR>
+" Use <C-X><C-C><C-V> to cut/copy/paste {{{
+vnoremap <C-X> "+x
+vnoremap <C-C> "+y
+map <C-V> "+gP
+cmap <C-V> <C-R>+
+noremap <C-Q> <C-V>
+"}}}
 
 set scrolloff=5
