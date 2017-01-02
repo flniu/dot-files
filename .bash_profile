@@ -21,6 +21,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 alias v=vim
 alias vd='vim -d'
 
+alias gc1='git clone --depth=1'
 alias gn='git number'
 alias gna='git number add'
 alias gnv='git number -c vim'
