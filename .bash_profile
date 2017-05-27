@@ -18,6 +18,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 alias v=vim
 alias vd='vim -d'
 
