@@ -1,3 +1,4 @@
+export PATH="$(brew --prefix homebrew/php/php71)/bin:/usr/local/sbin:$PATH"
 export EDITOR=vim
 export TMP=$HOME/.tmp
 
@@ -11,6 +12,8 @@ if [ -d "$HOME/.linuxbrew" ]; then
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
   export XDG_DATA_DIRS="$HOME/.linuxbrew/share:$XDG_DATA_DIRS"
 fi
+
+export PYTHONPATH=.
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
