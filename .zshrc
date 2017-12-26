@@ -90,7 +90,7 @@ unalias gl
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-export NVM_LAZY_LOAD=true
+#export NVM_LAZY_LOAD=true
 export NVM_NO_USE=true
 export NVM_AUTO_USE=true
 zplug "lukechilds/zsh-nvm"
