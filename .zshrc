@@ -96,3 +96,7 @@ export NVM_AUTO_USE=true
 zplug "lukechilds/zsh-nvm"
 
 zplug load
+
+if [ -f /usr/local/opt/arcanist/libexec/resources/shell/bash-completion ]; then
+  source /usr/local/opt/arcanist/libexec/resources/shell/bash-completion
+fi

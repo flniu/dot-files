@@ -1,4 +1,6 @@
 export PATH="$(brew --prefix homebrew/php/php71)/bin:/usr/local/sbin:$PATH"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export TMP=$HOME/.tmp
 
@@ -37,3 +39,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"
+
+export VAULT_ADDR=https://vault.roomis.com.cn
+
+export HOMEBREW_GITHUB_API_TOKEN=b032c1f4399bb1e862e7a560e4f5ecba14bd9334
