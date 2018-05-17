@@ -42,4 +42,4 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 export VAULT_ADDR=https://vault.roomis.com.cn
 
-export HOMEBREW_GITHUB_API_TOKEN=b032c1f4399bb1e862e7a560e4f5ecba14bd9334
+export HOMEBREW_GITHUB_API_TOKEN=5131266b344a56ee3b6b4d39bde661661860d5c9

@@ -100,3 +100,6 @@ zplug load
 if [ -f /usr/local/opt/arcanist/libexec/resources/shell/bash-completion ]; then
   source /usr/local/opt/arcanist/libexec/resources/shell/bash-completion
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
