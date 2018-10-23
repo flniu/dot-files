@@ -1,29 +1,21 @@
-export PATH="$(brew --prefix homebrew/php/php71)/bin:/usr/local/sbin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
-export TMP=$HOME/.tmp
+export PATH=$PATH:$HOME/.local/arcanist/bin
 
 if [ -f "$HOME/.envvar" ]; then
   source $HOME/.envvar
 fi
 
-if [ -d "$HOME/.linuxbrew" ]; then
-  export PATH="$HOME/.linuxbrew/bin:$PATH"
-  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-  export XDG_DATA_DIRS="$HOME/.linuxbrew/share:$XDG_DATA_DIRS"
-fi
-
 export PYTHONPATH=.
 
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=$(/usr/libexec/java_home)
 
 alias v=vim
 alias vd='vim -d'
@@ -41,5 +33,3 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --userconfig=$HOME/.cnpmrc"
 
 export VAULT_ADDR=https://vault.roomis.com.cn
-
-export HOMEBREW_GITHUB_API_TOKEN=5131266b344a56ee3b6b4d39bde661661860d5c9
