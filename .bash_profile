@@ -1,13 +1,14 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
-export PATH=$PATH:$HOME/.local/arcanist/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.local/arcanist/bin:$HOME/.bin
 
 if [ -f "$HOME/.envvar" ]; then
   source $HOME/.envvar
 fi
 
 export PYTHONPATH=.
+export BENCH_PATH=./bench
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
@@ -15,7 +16,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-#export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 alias v=vim
 alias vd='vim -d'
