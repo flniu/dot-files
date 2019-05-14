@@ -25,8 +25,8 @@ alias gc1='git clone --depth=1'
 alias gn='git number'
 alias gna='git number add'
 alias gnv='git number -c vim'
-alias gll='git log --pretty=format:"%C(yellow)%h %C(bold blue)<%an>%x09 %Cgreen(%ar) %C(auto)%d %Creset%s" --graph'
-alias glla='git log --pretty=format:"%C(yellow)%h %C(bold blue)<%an>%x09 %Cgreen(%ar) %C(auto)%d %Creset%s" --graph --all'
+alias gll='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ar) %C(auto)%d %Creset%s" --graph'
+alias glla='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ar) %C(auto)%d %Creset%s" --graph --all'
 
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
