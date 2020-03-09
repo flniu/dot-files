@@ -10,12 +10,14 @@ fi
 export PYTHONPATH=.
 export BENCH_PATH=./bench
 
-#export WORKON_HOME=$HOME/.virtualenvs
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-#source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
 
+#pyenv settings
 #if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-#if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
+#pyenv-virtualenv settings
+#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 # for pyenv install
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
