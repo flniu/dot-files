@@ -49,3 +49,6 @@ export VAULT_ADDR=https://vault.roomis.com.cn
 
 export PATH="$HOME/.jenv/bin:$PATH"
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+#for lms worker
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
