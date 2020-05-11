@@ -1,7 +1,7 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
-export PATH=$PATH:/usr/local/sbin:$HOME/.local/arcanist/bin:$HOME/.bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.local/arcanist/bin:$HOME/.bin:$HOME/go/bin
 
 if [ -f "$HOME/.envvar" ]; then
   source $HOME/.envvar
@@ -35,6 +35,7 @@ alias gc1='git clone --depth=1'
 alias gn='git number'
 alias gna='git number add'
 alias gnv='git number -c vim'
+alias gngv='git number -c gvim'
 alias gll='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ar) %C(auto)%d %Creset%s" --graph'
 alias glla='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ar) %C(auto)%d %Creset%s" --graph --all'
 alias glld='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(auto)%d %Creset%s" --graph'
@@ -49,6 +50,8 @@ export VAULT_ADDR=https://vault.roomis.com.cn
 
 export PATH="$HOME/.jenv/bin:$PATH"
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 #for lms worker
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
