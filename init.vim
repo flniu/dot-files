@@ -1,15 +1,15 @@
 " My vimrc for Mac/Linux/Windows * GUI/Console
 " Author: Francis Niu (https://github.com/flniu)
-" Last Change: 2020-04-06
+" Last Change: 2020-07-03
 
-" Variables{{{
+" Global variables {{{
 let $MYVIMRC = '~/.config/nvim/init.vim'
 if !exists($TMP)
   let $TMP = '~/.tmp'
 endif
 "}}}
 
-" Plugins{{{
+" Plugins {{{
 call plug#begin()
 
 " Color schemes
@@ -19,7 +19,7 @@ call plug#end()
 
 "}}}
 
-" Display{{{
+" Display {{{
 set shortmess=atI
 set number
 set statusline=%f\ %m%r[%{strftime('%Y%m%d',getftime(expand('%')))}]%=%{GetFileEditSetting()}\ %9(%l/%L%),%-3v\ %P
@@ -47,7 +47,14 @@ catch
 endtry
 "}}}
 
-" Key-mappings{{{
+" Encoding & multi-byte support {{{
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,chinese,latin1
+set ambiwidth=double
+set formatoptions+=mM
+"}}}
+
+" Key-mappings {{{
 " Make j/k behave like gj/gk but 1j/1k behave as normal
 noremap <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <expr> k (v:count == 0 ? 'gk' : 'k')
@@ -130,12 +137,12 @@ nmap <Leader>fm :set ff=mac<CR>
 " Search visual selected text
 vmap <silent> // y/<C-R>=substitute(escape(@",'\\/.*^$~[]'),'\n','\\n','g')<CR><CR>
 " Search conflicts
-nmap <Leader>cf /<<<\+\\|===\+\\|>>>\+<CR>
+nmap <Leader>cf /<<<<\+\\|====\+\\|>>>>\+<CR>
 " Save with sudo
 cmap w!! w !sudo tee >/dev/null %
 "}}}
 
-" Commands{{{
+" Commands {{{
 " Edit/Source vimrc
 command! EVIMRC e $MYVIMRC
 command! SOVIMRC so $MYVIMRC
@@ -149,7 +156,6 @@ command! -nargs=1 TSI set ts=<args> sw=<args> fdm=indent
 command! -bar -range=% Reverse <line1>,<line2>g/^/m<line1>-1
 " Group-by lines and count
 command! -range=% Count <line1>,<line2>sort | <line1>,<line2>s#\(^.\+$\)\(\n^\1$\)*#\=submatch(1)."\t".((len(submatch(0))+1)/(len(submatch(1))+1))#
-command! -range=% FormatJSON <line1>,<line2>!python -m json.tool
 " Write temp file, optional file extension name
 command! -nargs=? WT call WriteTempFile(<f-args>)
 function! WriteTempFile(...) "{{{
@@ -158,9 +164,10 @@ function! WriteTempFile(...) "{{{
     exe 'write $TMP/' . filename
   endif
 endfunction "}}}
+command! -range=% FormatJSON <line1>,<line2>!python -m json.tool
 "}}}
 
-" Autocmds{{{
+" Autocmds {{{
 " last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " timestamp
