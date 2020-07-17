@@ -1,6 +1,6 @@
 " My vimrc for Mac/Linux/Windows * GUI/Console
 " Author: Francis Niu (https://github.com/flniu)
-" Last Change: 2020-07-03
+" Last Change: 2020-07-17
 
 " Global variables {{{
 let $MYVIMRC = '~/.config/nvim/init.vim'
@@ -14,6 +14,8 @@ call plug#begin()
 
 " Color schemes
 Plug 'flniu/f-vim-colors'
+" Syntax and settings for plain text
+Plug 'flniu/txt.vim'
 
 call plug#end()
 
@@ -40,11 +42,6 @@ set scrolloff=5
 if has('folding')
   set foldcolumn=1
 endif
-try
-  colors molokai
-catch
-  colors desert
-endtry
 "}}}
 
 " Encoding & multi-byte support {{{
@@ -52,6 +49,14 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,latin1
 set ambiwidth=double
 set formatoptions+=mM
+"}}}
+
+" GUI & Terminal {{{
+try
+  colors molokai
+catch
+  colors desert
+endtry
 "}}}
 
 " Key-mappings {{{
@@ -159,9 +164,13 @@ command! -range=% Count <line1>,<line2>sort | <line1>,<line2>s#\(^.\+$\)\(\n^\1$
 " Write temp file, optional file extension name
 command! -nargs=? WT call WriteTempFile(<f-args>)
 function! WriteTempFile(...) "{{{
-  if empty(expand('%'))
-    let filename = strftime("%Y%m%d%H%M%S") . '.' . (a:0 >= 1 ? a:1 : 'tmp')
-    exe 'write $TMP/' . filename
+  let old_filename = expand('%')
+  let new_filename = $TMP . '/' . strftime("%Y%m%d%H%M%S") . '.' . (a:0 >= 1 ? a:1 : 'tmp')
+  if empty(old_filename)
+    exe 'write ' . new_filename
+  else
+    exe '!mv ' . old_filename . ' ' . new_filename
+    exe 'edit ' . new_filename
   endif
 endfunction "}}}
 command! -range=% FormatJSON <line1>,<line2>!python -m json.tool
