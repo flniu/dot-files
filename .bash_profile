@@ -1,6 +1,8 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
+
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH=$PATH:/usr/local/sbin:$HOME/.local/arcanist/bin:$HOME/.bin
 
 if [ -f "$HOME/.envvar" ]; then
