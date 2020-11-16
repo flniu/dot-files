@@ -3,7 +3,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH=$PATH:/usr/local/sbin:$HOME/.local/arcanist/bin:$HOME/.bin:$HOME/.cabal/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.local/arcanist/bin:$HOME/.bin:$HOME/.cabal/bin:$HOME/.local/confluent/bin
 
 if [ -f "$HOME/.envvar" ]; then
   source $HOME/.envvar
