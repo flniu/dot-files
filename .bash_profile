@@ -57,6 +57,9 @@ alias glla='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ar) %C(
 alias glld='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(auto)%d %Creset%s" --graph'
 alias gllda='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(auto)%d %Creset%s" --graph --all'
 
+# Docker
+alias dk=docker
+
 # JS
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
