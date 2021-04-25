@@ -1,9 +1,8 @@
-source $HOME/.bash_profile
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -46,6 +45,8 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -74,7 +75,6 @@ plugins=(
   z
   common-aliases
   vi-mode
-  virtualenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 unalias gl
 
 # brew install zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 #export NVM_LAZY_LOAD=true
@@ -118,23 +118,4 @@ zplug "lukechilds/zsh-nvm"
 
 zplug load
 
-if [ -f $HOME/.local/arcanist/resources/shell/bash-completion ]; then
-  source $HOME/.local/arcanist/resources/shell/bash-completion
-fi
-
-#autoload -U +X bashcompinit && bashcompinit
-#complete -o nospace -C /usr/local/bin/vault vault
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/mc mc
-
-. /usr/local/opt/asdf/asdf.sh
