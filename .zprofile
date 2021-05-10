@@ -24,6 +24,8 @@ alias glld='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(
 alias gllda='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(auto)%d %Creset%s" --graph --all'
 
 # JS
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
   --disturl=https://npm.taobao.org/dist \
