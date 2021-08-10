@@ -32,7 +32,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --userconfig=$HOME/.cnpmrc"
 
 # Python
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init --path)"; fi
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Java
