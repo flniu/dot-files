@@ -6,10 +6,10 @@ export PATH=/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:$HOME/bin
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-if [[ "$(uname -s)" == "Linux" ]]; then BREW_TYPE="linuxbrew"; else BREW_TYPE="homebrew"; fi
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/${BREW_TYPE}-core.git"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/${BREW_TYPE}-bottles"
+#if [[ "$(uname -s)" == "Linux" ]]; then BREW_TYPE="linuxbrew"; else BREW_TYPE="homebrew"; fi
+#export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+#export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/${BREW_TYPE}-core.git"
+#export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/${BREW_TYPE}-bottles"
 
 # Git
 alias gc1='git clone --depth=1'
@@ -33,6 +33,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 # Python
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Java
 jdk() {
@@ -40,3 +41,4 @@ jdk() {
     export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
     java -version
 }
+export JODCONVERTER_LOCAL_OFFICEHOME=/Applications/LibreOffice.app/Contents
