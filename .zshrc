@@ -105,17 +105,70 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-unalias gl
+export PATH="$HOME/.poetry/bin:$PATH"
 
-# brew install zplug
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# Common
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export EDITOR=vim
+export PATH=/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:$HOME/bin
 
-#export NVM_LAZY_LOAD=true
-export NVM_NO_USE=true
-export NVM_AUTO_USE=true
-zplug "lukechilds/zsh-nvm"
+# Homebrew
+#eval "$(/opt/homebrew/bin/brew shellenv)"
+#if [[ "$(uname -s)" == "Linux" ]]; then BREW_TYPE="linuxbrew"; else BREW_TYPE="homebrew"; fi
+#export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+#export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/${BREW_TYPE}-core.git"
+#export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/${BREW_TYPE}-bottles"
 
-zplug load
+# Git
+alias gc1='git clone --depth=1'
+alias gn='git number'
+alias gna='git number add'
+alias gnd='git number diff'
+alias gnv='git number -c vim'
+alias gngv='git number -c gvim'
+alias gl='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ar) %C(auto)%d %Creset%s" --graph'
+alias gla='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ar) %C(auto)%d %Creset%s" --graph --all'
+alias gld='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(auto)%d %Creset%s" --graph'
+alias glda='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(auto)%d %Creset%s" --graph --all'
+
+# Docker
+alias dk='docker'
+alias dkc='docker-compose'
+# K8S
+alias kb='kubectl'
+
+# JS
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
+
+# Python
+if which pyenv > /dev/null; then eval "$(pyenv init --path)"; fi
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+act() {
+    if [ -d venv ]; then
+        . venv/bin/activate
+    else
+        poetry shell
+    fi
+}
+
+# Java
+jdk() {
+    version=$1
+    export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+    java -version
+}
+export JODCONVERTER_LOCAL_OFFICEHOME=/Applications/LibreOffice.app/Contents
+
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

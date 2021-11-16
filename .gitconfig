@@ -1,5 +1,5 @@
 [user]
-	email = flniu@126.com
+	email = flniu@hipacloud.com
 	name = niufeilong
 [push]
 	default = simple
@@ -9,3 +9,5 @@
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 [pull]
     ff = only
+[core]
+	commentchar = ";"

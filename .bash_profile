@@ -71,3 +71,5 @@ export VAULT_ADDR=https://vault.roomis.com.cn
 
 #for lms worker
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+export PATH="$HOME/.poetry/bin:$PATH"
