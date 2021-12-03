@@ -105,13 +105,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/.poetry/bin:$PATH"
-
 # Common
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
-export PATH=/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH:$HOME/bin
+export PATH=/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.poetry/bin:$PATH:$HOME/bin:$HOME/go/bin
 
 # Homebrew
 #eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -136,7 +134,7 @@ alias glda='git log --pretty=format:"%Cred%h %C(bold blue)<%an> %Cgreen(%ai) %C(
 alias dk='docker'
 alias dkc='docker-compose'
 # K8S
-alias kb='kubectl'
+alias kc='kubectl'
 
 # JS
 export NVM_DIR="$HOME/.nvm"
