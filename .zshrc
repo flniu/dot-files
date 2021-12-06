@@ -167,6 +167,14 @@ jdk() {
 }
 export JODCONVERTER_LOCAL_OFFICEHOME=/Applications/LibreOffice.app/Contents
 
+#Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+#Android END
+
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
